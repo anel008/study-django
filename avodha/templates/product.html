@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<h1>product list </h1><br>
+
+{%for i in details%}
+
+
+<a href="{% url 'pdetails' i.id %}">{{ i.name }}</a>
+
+{%endfor%}
+
+
+
+<br>
+<br>
+
+<div>
+<form action="add" method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+name <input type = "text" name= 'name'> <br>
+price <input type = "text" name= 'price'> <br>
+disc <input type = "text" name= 'disc'> <br>
+img <input type = "file" name='img'><br>
+<input type='submit' value ='add'>
+
+</form>
+
+
+
+</div>
+
+<br><br>
+
+{%endblock content%}

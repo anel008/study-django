@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+
+
+
+{% block content %}
+<h1>{{ pdetails.name }}</h1>
+<p>Price: {{ pdetails.price }}</p>
+<p>Description: {{ pdetails.disc }}</p>
+<img src="{{pdetails.img.url}}" alt = "image.jpeg">
+
+<button onclick="location.href='{% url 'update' pdetails.id %}'" class="btn btn-secondary">Update</button>
+<button onclick="location.href='{% url 'delete' pdetails.id %}'" class="btn btn-danger">Delete</button>
+{% endblock content %}
+
+
+{% comment %} 
+{%block content%}
+<h1>{{ pdetails.name }}</h1>
+    <p>Price: {{ pdetails.price }}</p>
+    <p>Description: {{ pdetails.disc }}</p>
+
+    <button onclick="location.href='{% url 'update' pdetails.id %}'" class="btn btn-secondary">update</button>
+    <button onclick="location.href='{% url 'delete' pdetails.id%}'">Delete</button>
+{%endblock content%} {% endcomment %}
